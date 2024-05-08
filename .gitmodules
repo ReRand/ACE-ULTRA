@@ -1,0 +1,3 @@
+[submodule "Revared"]
+	path = Game/Workspace/Modules/Revared
+	url = https://github.com/ReRand/Revared/Revared

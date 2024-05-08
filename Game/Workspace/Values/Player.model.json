@@ -1,0 +1,11 @@
+{
+    "ClassName": "Folder",
+    
+    "Children": [
+
+        { "Name": "Standing", "ClassName": "BoolValue", "Value": true },
+        { "Name": "Walking", "ClassName": "BoolValue", "Value": false },
+        { "Name": "Alive", "ClassName": "BoolValue", "Value": true }
+        
+    ]
+}

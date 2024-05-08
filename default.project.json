@@ -1,0 +1,45 @@
+{
+	"name": "ReRandWorkshop",
+	
+	"tree": {
+		"$className": "DataModel",
+
+
+		"StarterGui": {
+			"$className": "StarterGui",
+			"$path": "Game/StarterGui"
+		},
+
+
+		"StarterPlayer": {
+			"$path": "Game/StarterPlayer"
+		},
+
+
+		"Lighting": {
+			"$className": "Lighting",
+			"$path": "Game/Lighting"
+		},
+
+
+		"Workspace": {
+			"$className": "Workspace",
+
+			"$properties": {
+
+			},
+
+			"Modules": { "$path": "Game/Workspace/Modules" },
+
+			"Values": { "$path": "Game/Workspace/Values" },
+			"Scripts": { "$path": "Game/Workspace/Scripts" }
+		}
+	},
+
+	"globIgnorePaths": [
+
+        
+
+    ]
+
+}
