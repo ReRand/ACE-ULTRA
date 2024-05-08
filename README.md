@@ -2,7 +2,7 @@
 
 <table><tr><td>
   
-RICOSHOT Open Source
+# RICOSHOT Open Source
 
 A first person multiplayer shooter inspired by Arsi "Hakita" Patala's
 indie hit 'ULTRAKILL', built around fun movement mechanics and epic style<br>
