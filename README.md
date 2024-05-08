@@ -2,11 +2,12 @@
 
 <table><tr><td>
   
-Lorem Ipsum X Open Source
+RICOSHOT Open Source
 
-Description<br>
+A first person multiplayer shooter inspired by Arsi "Hakita" Patala's
+indie hit 'ULTRAKILL', built around fun movement mechanics and epic style<br>
 
-Open source repository for the ReRand Roblox game "Lorem Ipsum"
+Open source repository for the ReRand Roblox game "RICOSHOT"
 
 <a href="put the game link here"><img height=175 src="put the banner here" alt="Banner"><a href="put the game link here"><img height=175 src="put the icon here" alt="Icon">
 <br>
@@ -61,4 +62,4 @@ See our [license](https://github.com/ReRand/RENTED/blob/v2/LICENSE) for more leg
 
 <br>
 
-Copyright (c) 202X ReRand Studios
+Copyright (c) 2024 ReRand Studios
