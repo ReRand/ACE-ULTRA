@@ -4,7 +4,7 @@
   
 # ACE-ULTRA 🦾 Open Source
 
-A first person multiplayer shooter inspired by Arsi "Hakita" Patala's
+A first person multiplayer PVP shooter inspired by Arsi "Hakita" Patala's
 indie hit 'ULTRAKILL', built around fun movement mechanics and epic style<br>
 
 Open source repository for the ReRand Roblox game "ACE-ULTRA"
