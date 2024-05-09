@@ -32,7 +32,12 @@
 			"Modules": { "$path": "Game/Workspace/Modules" },
 
 			"Values": { "$path": "Game/Workspace/Values" },
-			"Scripts": { "$path": "Game/Workspace/Scripts" }
+			"Scripts": { "$path": "Game/Workspace/Scripts" },
+			
+			"Maps": { "$path": "Game/Workspace/Maps" },
+			"Map": { "$path": "Game/Workspace/Map" },
+
+			"API": { "$path": "Game/Workspace/API" }
 		}
 	},
 
