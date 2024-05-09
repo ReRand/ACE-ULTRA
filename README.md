@@ -2,12 +2,12 @@
 
 <table><tr><td>
   
-# RICOSHOT Open Source
+# ACE-ULTRA 🦾 Open Source
 
 A first person multiplayer shooter inspired by Arsi "Hakita" Patala's
 indie hit 'ULTRAKILL', built around fun movement mechanics and epic style<br>
 
-Open source repository for the ReRand Roblox game "RICOSHOT"
+Open source repository for the ReRand Roblox game "ACE-ULTRA"
 
 <a href="put the game link here"><img height=175 src="put the banner here" alt="Banner"><a href="put the game link here"><img height=175 src="put the icon here" alt="Icon">
 <br>
