@@ -1,10 +1,6 @@
-[submodule "Revared"]
-	path = Game/Workspace/Modules/Revared
-	url = https://github.com/ReRand/RbxRevared
-
 [submodule "Assets"]
 	path = Assets
 	url = https://github.com/ReRand/ACE-ULTRA-Assets
-[submodule "RbxRevared"]
-	path = RbxRevared
+[submodule "Revared"]
+	path = Modules/Revared
 	url = https://github.com/ReRand/RbxRevared/

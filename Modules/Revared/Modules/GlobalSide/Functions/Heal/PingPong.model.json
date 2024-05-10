@@ -1,0 +1,11 @@
+{
+    "ClassName": "Folder",
+
+    "Children": [
+        { "Name": "Client", "ClassName": "RemoteEvent" },
+        { "Name": "Server", "ClassName": "RemoteEvent" },
+        { "Name": "Finally", "ClassName": "RemoteEvent" },
+        { "Name": "ReferServer", "ClassName": "BindableEvent" }
+    ]
+    
+}
