@@ -1,0 +1,15 @@
+{
+    "ClassName": "Folder",
+    
+    "Children": [
+
+        { "elapsedTime": "crosshairHold", "ClassName": "NumberValue", "Value": 0 },
+
+        { "Name": "ended", "ClassName": "BoolValue", "Value": false },
+        { "Name": "started", "ClassName": "BoolValue", "Value": false },
+        { "Name": "firstBooted", "ClassName": "BoolValue", "Value": false },
+        
+        { "Name": "gameStatus", "ClassName": "StringValue", "Value": "Open Pre-Alpha" }
+        
+    ]
+}

@@ -1,0 +1,213 @@
+{
+    "ClassName": "Folder",
+
+    "Children": [
+        
+
+        { "Name": "StatsRem", "ClassName": "RemoteFunction" },
+        { "Name": "AddPlayerToLeaderboard", "ClassName": "RemoteEvent" },
+        { "Name": "ArmParity", "ClassName": "RemoteEvent" },
+        { "Name": "ChangeCharacter", "ClassName": "RemoteEvent" },
+        { "Name": "ArmParity", "ClassName": "RemoteEvent" },
+        { "Name": "EmoteServerModules", "ClassName": "RemoteEvent" },
+        { "Name": "LightBomb", "ClassName": "RemoteEvent" },
+        { "Name": "MenuRespawner", "ClassName": "RemoteEvent" },
+        { "Name": "OnBootReloc", "ClassName": "RemoteEvent" },
+        { "Name": "OnDeathRespawn", "ClassName": "RemoteEvent" },
+        { "Name": "OnFirstBoot", "ClassName": "RemoteEvent" },
+        { "Name": "OnLoadRespawn", "ClassName": "RemoteEvent" },
+        { "Name": "OnMenuReload", "ClassName": "BindableEvent" },
+        { "Name": "OnPlaySpawn", "ClassName": "RemoteEvent" },
+        { "Name": "RemovePlayerFromLeaderboard", "ClassName": "RemoteEvent" },
+        { "Name": "UnlightBomb", "ClassName": "RemoteEvent" },
+        { "Name": "UpdateSkin", "ClassName": "BindableEvent" },
+        { "Name": "UpdateValue", "ClassName": "RemoteEvent" },
+        { "Name": "ValueAdded", "ClassName": "RemoteEvent" },
+        
+        
+        { 
+
+
+        "Name": "Exploder", 
+        "ClassName": "Folder", 
+        
+        "Children": [
+
+            { "Name": "BoomMessage", "ClassName": "RemoteEvent" },
+            { "Name": "ClientDamage", "ClassName": "RemoteEvent" },
+            { "Name": "IFramed", "ClassName": "RemoteEvent" }
+
+        ]}, {
+
+
+
+
+        "Name": "Fire", 
+        "ClassName": "Folder", 
+        
+        "Children": [
+
+            { "Name": "ClientDamage", "ClassName": "RemoteEvent" },
+            { "Name": "GiveFireEffect", "ClassName": "RemoteEvent" }
+
+        ]}, {
+
+
+
+
+        "Name": "Flatter", 
+        "ClassName": "Folder", 
+        
+        "Children": [
+
+            { "Name": "ClientDamage", "ClassName": "RemoteEvent" },
+            { "Name": "IFramed", "ClassName": "RemoteEvent" }
+
+        ]}, {
+
+
+
+
+        "Name": "GameRoundMapLoading", 
+        "ClassName": "Folder", 
+        
+        "Children": [
+
+            { "Name": "EndRound", "ClassName": "Folder", "Children": [
+                { "Name": "Client", "ClassName": "RemoteEvent" },
+                { "Name": "Server", "ClassName": "BindableEvent" }
+            ] },
+    
+            { "Name": "StartRound", "ClassName": "Folder", "Children": [
+                { "Name": "Client", "ClassName": "RemoteEvent" },
+                { "Name": "Server", "ClassName": "BindableEvent" }
+            ] },
+    
+            { "Name": "ClientPoster", "ClassName": "RemoteEvent" },
+            { "Name": "DisablePlayers", "ClassName": "RemoteEvent" },
+            { "Name": "FirstBoot", "ClassName": "BindableEvent" },
+    
+            { "Name": "GamemodeUnvote", "ClassName": "RemoteEvent" },
+            { "Name": "GamemodeVote", "ClassName": "RemoteEvent" },
+            { "Name": "GamemodeVoteEnd", "ClassName": "RemoteEvent" },
+    
+            { "Name": "KickToMenu", "ClassName": "RemoteEvent" },
+    
+            { "Name": "MapUnvote", "ClassName": "RemoteEvent" },
+            { "Name": "MapVote", "ClassName": "RemoteEvent" },
+            { "Name": "MapVoteEnd", "ClassName": "RemoteEvent" },
+            
+            { "Name": "ReloadMap", "ClassName": "RemoteEvent" },
+            { "Name": "RunGamemodeModule", "ClassName": "RemoteEvent" },
+            { "Name": "RunMapModule", "ClassName": "RemoteEvent" }
+
+        ]}, {
+
+
+
+
+        "Name": "GetSkinId", 
+        "ClassName": "Folder", 
+        
+        "Children": [
+
+            { "Name": "Client", "ClassName": "RemoteEvent" },
+            { "Name": "Server", "ClassName": "BindableEvent" }
+
+        ]}, {
+
+
+
+
+        "Name": "GetSkinModel", 
+        "ClassName": "Folder", 
+        
+        "Children": [
+
+            { "Name": "Client", "ClassName": "RemoteEvent" },
+            { "Name": "Server", "ClassName": "BindableEvent" }
+
+        ]}, {
+
+
+
+
+        "Name": "HtscMod", 
+        "ClassName": "Folder", 
+        
+        "Children": [
+
+            { "Name": "BoomMessage", "ClassName": "RemoteEvent" },
+            { "Name": "ClientDamage", "ClassName": "RemoteEvent" },
+            { "Name": "IFramed", "ClassName": "RemoteEvent" },
+            { "Name": "Firer", "ClassName": "RemoteEvent" },
+            { "Name": "RunFireClientModules", "ClassName": "RemoteEvent" }
+
+        ]}, {
+
+
+
+
+        "Name": "ProjMod", 
+        "ClassName": "Folder", 
+        
+        "Children": [
+
+            { "Name": "BoomMessage", "ClassName": "RemoteEvent" },
+            { "Name": "ClientDamage", "ClassName": "RemoteEvent" },
+            { "Name": "Deflecter", "ClassName": "RemoteEvent" },
+            { "Name": "Exploder", "ClassName": "RemoteEvent" },
+            { "Name": "Firer", "ClassName": "RemoteEvent" },
+            { "Name": "IFramed", "ClassName": "RemoteEvent" },
+            { "Name": "RunFireClientModules", "ClassName": "RemoteEvent" }
+
+        ]}, {
+
+
+
+
+        "Name": "PunchParry", 
+        "ClassName": "Folder", 
+        
+        "Children": [
+
+            { "Name": "BoomMessage", "ClassName": "RemoteEvent" },
+            { "Name": "ClientDamage", "ClassName": "RemoteEvent" },
+            { "Name": "IFramed", "ClassName": "RemoteEvent" },
+            { "Name": "ServerVelocity", "ClassName": "RemoteEvent" }
+
+        ]}, {
+
+
+
+
+        "Name": "SlideSlam", 
+        "ClassName": "Folder", 
+        
+        "Children": [
+
+            { "Name": "Slam", "ClassName": "BindableEvent" },
+            { "Name": "SlamEffects", "ClassName": "RemoteEvent" },
+            { "Name": "SlideBegan", "ClassName": "BindableEvent" },
+            { "Name": "SlideEnded", "ClassName": "BindableEvent" }
+
+        ]}, {
+
+
+
+
+        "Name": "WeaponVisParity", 
+        "ClassName": "Folder", 
+        
+        "Children": [
+
+            { "Name": "Appear", "ClassName": "RemoteEvent" },
+            { "Name": "Disappear", "ClassName": "RemoteEvent" },
+            { "Name": "Filter", "ClassName": "RemoteEvent" },
+            { "Name": "WeapInit", "ClassName": "RemoteEvent" }
+
+        ]}
+
+
+    ]
+}

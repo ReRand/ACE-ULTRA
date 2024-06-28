@@ -22,6 +22,12 @@
 		},
 
 
+		"ReplicatedStorage": {
+			"$className": "Lighting",
+			"$path": "Game/ReplicatedStorage"
+		},
+
+
 		"Workspace": {
 			"$className": "Workspace",
 
@@ -32,7 +38,8 @@
 			"Map": { "$path": "Game/Workspace/Map" },
 
 			"Modules": { "$path": "Modules" },
-			"Values": { "$path": "Values" },
+			"LocalValues": { "$path": "LocalValues" },
+			"GlobalValues": { "$path": "GlobalValues" },
 			"Maps": { "$path": "Maps" },
 			"API": { "$path": "API" }
 		}

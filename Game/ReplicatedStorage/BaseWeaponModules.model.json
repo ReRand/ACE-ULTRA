@@ -1,0 +1,40 @@
+{
+    "ClassName": "Folder",
+
+    "Children": [
+        { "Name": "Bullet", "ClassName": "Folder", "Children": [
+
+            { "Name": "Hit", "ClassName": "Folder", "Children": [
+
+                { "Name": "Client", "ClassName": "Folder" },
+                { "Name": "Server", "ClassName": "Folder" }
+            
+             ] },
+            { "Name": "Shot", "ClassName": "Folder", "Children": [
+
+                { "Name": "Client", "ClassName": "Folder" },
+                { "Name": "Server", "ClassName": "Folder" }
+
+            ]}
+        
+        ]},
+
+
+        { "Name": "Parry", "ClassName": "Folder", "Children": [
+
+            { "Name": "Hit", "ClassName": "Folder", "Children": [
+                
+                { "Name": "Client", "ClassName": "Folder" },
+                { "Name": "Server", "ClassName": "Folder" }
+            
+             ] },
+            { "Name": "Parried", "ClassName": "Folder", "Children": [
+
+                { "Name": "Client", "ClassName": "Folder" },
+                { "Name": "Server", "ClassName": "Folder" }
+
+            ]}
+        
+        ]}
+    ]
+}

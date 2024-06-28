@@ -1,0 +1,120 @@
+{
+    "ClassName": "Folder",
+    
+    "Children": [
+
+        { "Name": "killerHuman", "ClassName": "ObjectValue" },
+        { "Name": "assistHuman", "ClassName": "ObjectValue" },
+
+
+        { "Name": "kills", "ClassName": "NumberValue", "Value": 0, "Children": [
+                { "Name": "ignore", "ClassName": "BoolValue", "Value": true }
+        ]},
+        { "Name": "sessionKills", "ClassName": "NumberValue", "Value": 0, "Children": [
+                { "Name": "ignore", "ClassName": "BoolValue", "Value": true }
+        ]},
+
+
+        { "Name": "style", "ClassName": "NumberValue", "Value": 0, "Children": [
+            { "Name": "ignore", "ClassName": "BoolValue", "Value": true }
+        ]},
+        { "Name": "sessionStyle", "ClassName": "NumberValue", "Value": 0, "Children": [
+                { "Name": "ignore", "ClassName": "BoolValue", "Value": true }
+        ]},
+
+
+        { "Name": "crosshairColor3", "ClassName": "Color3Value", "Value": { "Color3": [1, 1, 1] } },
+        { "Name": "crosshairHold", "ClassName": "BoolValue", "Value": false },
+        { "Name": "crosshairSize", "ClassName": "NumberValue", "Value": -1 },
+        { "Name": "crosshairTransparency", "ClassName": "NumberValue", "Value": -1 },
+        
+
+        { "Name": "level", "ClassName": "NumberValue", "Value": -1 },
+        { "Name": "currentExp", "ClassName": "NumberValue", "Value": -1 },
+        { "Name": "requiredExp", "ClassName": "NumberValue", "Value": -1 },
+        { "Name": "overExp", "ClassName": "NumberValue", "Value": -1 },
+
+
+        { "Name": "skinId", "ClassName": "NumberValue", "Value": -1, "Children": [
+                { "Name": "ignore", "ClassName": "BoolValue", "Value": true }
+        ]},
+
+
+        { "Name": "weaponId", "ClassName": "NumberValue", "Value": 0 },
+        { "Name": "lastWeaponId", "ClassName": "NumberValue", "Value": 0 },
+
+
+        { "Name": "perk1", "ClassName": "NumberValue", "Value": -1, "Children": [
+                { "Name": "ignore", "ClassName": "BoolValue", "Value": true }
+        ]},
+        { "Name": "perk2", "ClassName": "NumberValue", "Value": -1, "Children": [
+                { "Name": "ignore", "ClassName": "BoolValue", "Value": true }
+        ]},
+
+
+        { "Name": "slot1", "ClassName": "NumberValue", "Value": -1, "Children": [
+                { "Name": "ignore", "ClassName": "BoolValue", "Value": true }
+        ]},
+        { "Name": "slot2", "ClassName": "NumberValue", "Value": -1, "Children": [
+                { "Name": "ignore", "ClassName": "BoolValue", "Value": true }
+        ]},
+        { "Name": "slot3", "ClassName": "NumberValue", "Value": -1, "Children": [
+                { "Name": "ignore", "ClassName": "BoolValue", "Value": true }
+        ]},
+        { "Name": "slot4", "ClassName": "NumberValue", "Value": -1, "Children": [
+                { "Name": "ignore", "ClassName": "BoolValue", "Value": true }
+        ]},
+
+
+        { "Name": "dashEnabled", "ClassName": "BoolValue", "Value": true, "Children": [
+                { "Name": "ignore", "ClassName": "BoolValue", "Value": true }
+        ]},
+        { "Name": "punchEnabled", "ClassName": "BoolValue", "Value": true, "Children": [
+                { "Name": "ignore", "ClassName": "BoolValue", "Value": true }
+        ]},
+        { "Name": "siphonEnabled", "ClassName": "BoolValue", "Value": true, "Children": [
+                { "Name": "ignore", "ClassName": "BoolValue", "Value": true }
+        ]},
+        { "Name": "slamEnabled", "ClassName": "BoolValue", "Value": true, "Children": [
+                { "Name": "ignore", "ClassName": "BoolValue", "Value": true }
+        ]},
+        { "Name": "slideEnabled", "ClassName": "BoolValue", "Value": true, "Children": [
+                { "Name": "ignore", "ClassName": "BoolValue", "Value": true }
+        ]},
+        { "Name": "wallSlideEnabled", "ClassName": "BoolValue", "Value": true, "Children": [
+                { "Name": "ignore", "ClassName": "BoolValue", "Value": true }
+        ]},
+
+
+        { "Name": "emoteSlot1", "ClassName": "NumberValue", "Value": -1, "Children": [
+                { "Name": "ignore", "ClassName": "BoolValue", "Value": true }
+        ]},
+        { "Name": "emoteSlot2", "ClassName": "NumberValue", "Value": -1, "Children": [
+                { "Name": "ignore", "ClassName": "BoolValue", "Value": true }
+        ]},
+        { "Name": "emoteSlot3", "ClassName": "NumberValue", "Value": -1, "Children": [
+                { "Name": "ignore", "ClassName": "BoolValue", "Value": true }
+        ]},
+        { "Name": "emoteSlot4", "ClassName": "NumberValue", "Value": -1, "Children": [
+                { "Name": "ignore", "ClassName": "BoolValue", "Value": true }
+        ]},
+        { "Name": "emoteSlot5", "ClassName": "NumberValue", "Value": -1, "Children": [
+                { "Name": "ignore", "ClassName": "BoolValue", "Value": true }
+        ]},
+
+
+        { "Name": "iframed", "ClassName": "BoolValue", "Value": false },
+        { "Name": "lit", "ClassName": "BoolValue", "Value": false },
+        { "Name": "loaded", "ClassName": "BoolValue", "Value": false },
+        { "Name": "mapLoaded", "ClassName": "BoolValue", "Value": false },
+        { "Name": "mapLocallyLoaded", "ClassName": "BoolValue", "Value": false },
+        { "Name": "menu", "ClassName": "BoolValue", "Value": false },
+        { "Name": "spawned", "ClassName": "BoolValue", "Value": false },
+        { "Name": "stats", "ClassName": "BoolValue", "Value": false },
+
+
+        { "Name": "parrying", "ClassName": "BoolValue", "Value": false, "Children": [
+                { "Name": "ignore", "ClassName": "BoolValue", "Value": true }
+        ]}
+    ]
+}
