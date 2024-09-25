@@ -1,5 +1,5 @@
 # Hook Sand and Sinker Update
-Version 0.2.0
+Pre-Alpha Version 0.2.0
 
 ## THIS UPDATE IS IN DEVELOPMENT RIGHT NOW AND IS NOT OUT YET
 
