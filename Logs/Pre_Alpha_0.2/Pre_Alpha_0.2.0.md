@@ -12,9 +12,13 @@ Pre-Alpha Version 0.2.0
 - added alt fires for most of the weapons
 - added slam storage
 - improved viewport
-- added song credits pop-in
+- added song credits pop-in when respawning
 - updated dash to not be trash
 - reduced stamina from 90 to 70
+- added more camera effects to slide and dash
+- added camera tilt
+- nerfed player walk speed from 25 to 20
+- nerfed slide speed from 45 to 43
 
 ### DUNESTONE
 - "DUNESTONE" is the 5th map added to the game and with it comes a new song "SANDGRAIN IRONHIP"
