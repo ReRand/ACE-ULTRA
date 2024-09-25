@@ -9,7 +9,7 @@ indie hit 'ULTRAKILL', built around fun movement mechanics and epic style<br>
 
 Open source repository for the ReRand Roblox game "ACE-ULTRA"
 
-<a href="https://www.roblox.com/games/16818877120/ACE-ULTRA"><img height=175 src="https://tr.rbxcdn.com/b70cc1610d98decf93f9f21e8408f675/768/432/Image/Webp" alt="Banner"><a href="https://www.roblox.com/games/16818877120/ACE-ULTRA"><img height=175 src="https://tr.rbxcdn.com/038d2bc3185d0102cad5f1550910914c/256/256/Image/Webp" alt="Icon">
+<a href="https://www.roblox.com/games/16818877120/ACE-ULTRA"><img height=175 src="https://tr.rbxcdn.com/b70cc1610d98decf93f9f21e8408f675/768/432/Image/Png" alt="Banner"><a href="https://www.roblox.com/games/16818877120/ACE-ULTRA"><img height=175 src="https://tr.rbxcdn.com/038d2bc3185d0102cad5f1550910914c/256/256/Image/Png" alt="Icon">
 <br>
 
 <br>
