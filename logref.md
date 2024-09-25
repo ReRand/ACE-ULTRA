@@ -10,4 +10,4 @@ this is where log references are for easier navigation<br>
 
 ### [Alpha_0.2](https://github.com/ReRand/ACE-ULTRA/tree/main/logs/Alpha_0.2) (#1)
 
-1. Alpha_0.2.0 [(Alpha_0.2.0.md)](https://github.com/ReRand/ACE-ULTRA/blob/main/logs/Alpha_0.2/Alpha_0.2.0.md) 
+1. Hook Sand and Sinker Update [(Alpha_0.2.0.md)](https://github.com/ReRand/ACE-ULTRA/blob/main/logs/Alpha_0.2/Alpha_0.2.0.md) 
