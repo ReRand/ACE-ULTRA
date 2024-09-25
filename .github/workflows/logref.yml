@@ -8,6 +8,7 @@ on:
     paths:
       - Logs/**
       - .github/workflows/logs/**
+      - .github/workflows/logref.yml
 
 jobs:
   refresh-logref:
