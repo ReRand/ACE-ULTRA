@@ -47,8 +47,8 @@ console.log('test');
 
 let base = "https://github.com/ReRand/ACE-ULTRA";
 
-let tree = `${base}/tree/main/logs`;
-let blob = `${base}/blob/main/logs`
+let tree = `${base}/tree/main/Logs`;
+let blob = `${base}/blob/main/Logs`
 
 let sep = (__dirname.includes("/")) ? "/" : "\\";
 
