@@ -139,7 +139,7 @@ commands.forEach( async c => {
 const platform = os.platform();
 const pytext = (platform.includes("win")) ? "py" : "python";
 
-const pythonProcess = spawn(pytext, [ `${__dirname}/logref.py`, username, useremail, commitmsg, base ]);
+const pythonProcess = spawn(pytext, [ `${__dirname}/logref.py`, basedir, username, useremail, commitmsg, base ]);
 
 pythonProcess.stdout.on('data', (data) => {
   console.log(data.toString());
