@@ -69,14 +69,8 @@ let content = [
 
 const config = require('./config.json');
 
-
 const versionnames = config.versions;
 const versions = {};
-
-
-groups = groups.sort((a, b) => {
-  return (config.reverseSort) ? b - a : a - b;
-});
 
 
 groups.forEach((group, gi) => {
@@ -120,7 +114,11 @@ groups.forEach((group, gi) => {
 
 versionnames.forEach((vn, i) => {
   if (versions[vn]) {
-    content = content.concat(versions[vn]);
+    v = versions[vn].sort((a, b) => {
+      return (config.reverseSort) ? b - a : a - b;
+    });
+    
+    content = content.concat(v);
   }
 });
 
