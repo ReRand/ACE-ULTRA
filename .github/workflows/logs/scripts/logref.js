@@ -50,7 +50,7 @@ let base = "https://github.com/ReRand/ACE-ULTRA";
 let tree = `${base}/tree/main/logs`;
 let blob = `${base}/blob/main/logs`
 
-let sep = (__dirname.includes("/")) ? "/" : "\";
+let sep = (__dirname.includes("/")) ? "/" : "\\";
 
 let basedir = __dirname.replace( ([".github", "workflows", "logs", "scripts"].join(sep)), "");
 let dir = `${basedir}logs`;
