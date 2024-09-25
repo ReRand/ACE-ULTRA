@@ -6,7 +6,7 @@ basedir = os.path.dirname(os.path.realpath(__file__));
 dirs = [ ".github", "workflows", "logs", "scripts" ];
 
 if "/" in basedir:
-  basedir = basedir.replace( "/".join(dirs) );
+  basedir = basedir.replace( "/".join(dirs), '' );
 
 logrefdir = basedir + "logref.md";
 
