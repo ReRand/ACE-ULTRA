@@ -1,0 +1,37 @@
+# this is cool https://stackoverflow.com/questions/74265821/get-modified-files-in-github-actions
+
+name: update logref
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - Logs/**
+      - .github/workflows/logs/**
+
+jobs:
+  refresh-logref:
+    runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        working-directory: ./.github/workflows/logs/scripts
+        
+    steps:
+      - name: Check out the repository to the runner
+        uses: actions/checkout@v4  
+
+      - name: Install packages  
+        run: npm i
+      
+      - name: Make the script files executable
+        run: chmod u+x logref.js
+
+
+      - name: Config Github
+        run: |
+          git config --global user.name ${{ github.actor }}
+          git config --global user.email ${{ github.event.pusher.email }}
+      
+      - name: Run the scripts
+        run: node ./logref.js --username=${{ github.actor }} --useremail=${{ github.event.pusher.email }} --commitmsg=${{ github.event.head_commit.message }}
