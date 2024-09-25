@@ -68,6 +68,12 @@ let content = [
 
 
 const config = require('./config.json');
+
+
+const versionnames = config.versions;
+const versions = {};
+
+
 groups = groups.sort((a, b) => {
   return (config.reverseSort) ? b - a : a - b;
 });
@@ -78,8 +84,16 @@ groups.forEach((group, gi) => {
   let treelink = `${tree}/${ group.split(" ").join("%20") }`;
   let bloblink = `${blob}/${ group.split(" ").join("%20") }`;
   let logs = fs.readdirSync(groupdir);
+  var v = content;
+  
+  versionnames.forEach((vn, i) => {
+    if (group.includes(vn)) {
+      if (!versions[vn]) versions[vn] = [];
+      v = versions[vn];
+    }
+  });
 
-  content.push(`### [${group}](${treelink}) (#${gi})`);
+  v.push(`### [${group}](${treelink}) (#${gi})`);
   
   logs.forEach((log, li) => {
     let logbloblink = `${bloblink}/${ log.split(" ").join("%20") }`;
@@ -100,10 +114,15 @@ groups.forEach((group, gi) => {
       name = log.replace(".md", "");
     };
     
-    content.push(`${li+1}. ${name} [(${ log })](${ logbloblink }) `)
+    v.push(`${li+1}. ${name} [(${ log })](${ logbloblink }) `)
   });
 });
 
+versionnames.forEach((vn, i) => {
+  if (versions[vn]) {
+    content = content.concat(versions[vn]);
+  }
+});
 
 content = content.join("\n\n");
 
