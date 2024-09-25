@@ -1,20 +1,13 @@
 import sys
 import os
 
-basedir = os.path.dirname(os.path.realpath(__file__));
-
-dirs = [ ".github", "workflows", "logs", "scripts" ];
-
-if "/" in basedir:
-  basedir = basedir.replace( "/".join(dirs), '' );
+basedir = sys.argv[1];
 
 logrefdir = basedir + "logref.md";
 
-print(logrefdir);
-
-username = sys.argv[1];
-useremail = sys.argv[2];
-commitmsg = sys.argv[3];
+username = sys.argv[2];
+useremail = sys.argv[3];
+commitmsg = sys.argv[4];
 repolink = sys.argv[4];
 
 
