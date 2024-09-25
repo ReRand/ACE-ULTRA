@@ -47,11 +47,11 @@ console.log('test');
 
 let base = "https://github.com/ReRand/ACE-ULTRA-update-log";
 
-let tree = `${base}/tree/main/logs`;
-let blob = `${base}/blob/main/logs`
+let tree = `${base}/tree/main/Logs`;
+let blob = `${base}/blob/main/Logs`
 
 let basedir = __dirname.replace("workflowscripts", "");
-let dir = `${basedir}logs`;
+let dir = `${basedir}Logs`;
 let logrefdir = `${basedir}logref.md`;
 
 let groups = fs.readdirSync(dir);
