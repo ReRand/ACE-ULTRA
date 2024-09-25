@@ -45,13 +45,15 @@ console.log(commitmsg);
 
 console.log('test');
 
-let base = "https://github.com/ReRand/ACE-ULTRA-update-log";
+let base = "https://github.com/ReRand/ACE-ULTRA";
 
-let tree = `${base}/tree/main/Logs`;
-let blob = `${base}/blob/main/Logs`
+let tree = `${base}/tree/main/logs`;
+let blob = `${base}/blob/main/logs`
 
-let basedir = __dirname.replace("workflowscripts", "");
-let dir = `${basedir}Logs`;
+let sep = (__dirname.includes("/")) ? "/" : "\";
+
+let basedir = __dirname.replace( ([".github", "workflows", "logs", "scripts"].join(sep)), "");
+let dir = `${basedir}logs`;
 let logrefdir = `${basedir}logref.md`;
 
 let groups = fs.readdirSync(dir);
@@ -60,14 +62,16 @@ let content = [
 
   "# LogRef",
   "this is where log references are for easier navigation<br>",
-  '<img height=22 src="https://github.com/ReRand/ACE-ULTRA-update-log/actions/workflows/logref.yml/badge.svg" alt="publish">'
+  '<img height=22 src="https://github.com/ReRand/ACE-ULTRA/actions/workflows/logref.yml/badge.svg" alt="publish">'
 
 ];
+
 
 const config = require('./config.json');
 groups = groups.sort((a, b) => {
   return (config.reverseSort) ? b - a : a - b;
 });
+
 
 groups.forEach((group, gi) => {
   let groupdir = `${dir}/${group}`;
