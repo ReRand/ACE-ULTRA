@@ -1,5 +1,5 @@
 {
-  "reverseSort": false,
+  "reverseSort": true,
   "versions": [
     "Release",
     "Beta",
