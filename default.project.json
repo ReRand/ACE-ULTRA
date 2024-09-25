@@ -1,54 +1,40 @@
 {
 	"name": "ACEULTRA",
-	
 	"tree": {
-		"$className": "DataModel",
-
-
-		"StarterGui": {
-			"$className": "StarterGui",
-			"$path": "Game/StarterGui"
+	  "$className": "DataModel",
+	  "ReplicatedStorage": {
+		"$className": "ReplicatedStorage",
+		"$ignoreUnknownInstances": true,
+		"$path": "src/ReplicatedStorage"
+	  },
+	  "ServerScriptService": {
+		"$className": "ServerScriptService",
+		"$ignoreUnknownInstances": true,
+		"$path": "src/ServerScriptService"
+	  },
+	  "StarterPlayer": {
+		"$className": "StarterPlayer",
+		"StarterCharacter": {
+		  "$className": "Model",
+		  "$ignoreUnknownInstances": true,
+		  "$path": "src/StarterPlayer/StarterCharacter"
 		},
-
-
-		"StarterPlayer": {
-			"$path": "Game/StarterPlayer"
+		"StarterCharacterScripts": {
+		  "$className": "StarterCharacterScripts",
+		  "$ignoreUnknownInstances": true,
+		  "$path": "src/StarterPlayer/StarterCharacterScripts"
 		},
-
-
-		"Lighting": {
-			"$className": "Lighting",
-			"$path": "Game/Lighting"
+		"StarterPlayerScripts": {
+		  "$className": "StarterPlayerScripts",
+		  "$ignoreUnknownInstances": true,
+		  "$path": "src/StarterPlayer/StarterPlayerScripts"
 		},
-
-
-		"ReplicatedStorage": {
-			"$className": "Lighting",
-			"$path": "Game/ReplicatedStorage"
-		},
-
-
-		"Workspace": {
-			"$className": "Workspace",
-
-			"$properties": {
-
-			},
-			"Scripts": { "$path": "Game/Workspace/Scripts" },
-			"Map": { "$path": "Game/Workspace/Map" },
-
-			"Modules": { "$path": "Modules" },
-			"LocalValues": { "$path": "LocalValues" },
-			"GlobalValues": { "$path": "GlobalValues" },
-			"Maps": { "$path": "Maps" },
-			"API": { "$path": "API" }
-		}
-	},
-
-	"globIgnorePaths": [
-
-        
-
-    ]
-
-}
+		"$ignoreUnknownInstances": true
+	  },
+	  "Workspace": {
+		"$className": "Workspace",
+		"$ignoreUnknownInstances": true,
+		"$path": "src/Workspace"
+	  }
+	}
+  }

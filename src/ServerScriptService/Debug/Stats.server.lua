@@ -1,0 +1,1 @@
+game.ReplicatedStorage.GameEvents:WaitForChild("StatsRem").OnServerInvoke = function() end
