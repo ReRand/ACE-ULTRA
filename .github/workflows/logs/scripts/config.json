@@ -1,3 +1,9 @@
 {
-  "reverseSort": false
+  "reverseSort": false,
+  "versions": [
+    "PreAlpha",
+    "Alpha",
+    "Beta",
+    "Release"
+  ]
 }
