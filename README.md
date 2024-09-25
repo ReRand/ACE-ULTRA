@@ -2,7 +2,7 @@
 
 <table><tr><td>
   
-# ACE-ULTRA 🦾 Open Source
+# ACE-ULTRA Open Source
 
 A first person multiplayer PVP shooter inspired by Arsi "Hakita" Patala's
 indie hit 'ULTRAKILL', built around fun movement mechanics and epic style<br>
