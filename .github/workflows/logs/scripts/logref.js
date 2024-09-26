@@ -129,9 +129,10 @@ versionnames.forEach((vn, i) => {
     stuff.unshift(versions[vn].header);
 
     vsubs = vsubs.sort( (a, b) => {
-      console.log(a.header.localeCompare(b.header));
-      return a - b;
+      return a.header.localeCompare(b.header);
     });
+
+    console.log(vsubs);
     
     /*v = v.content.sort();
     v = (config.reverseSort) ? v.reverse() : v;*/
