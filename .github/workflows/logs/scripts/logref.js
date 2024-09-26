@@ -137,6 +137,8 @@ versionnames.forEach((vn, i) => {
 
     vsubs.forEach( (sub) => {
       let { header, content } = sub;
+
+      content = (config.reverseSort) ? content.reverse() : content;
       
       stuff.push(header);
       content.forEach(c => stuff.push(c));
