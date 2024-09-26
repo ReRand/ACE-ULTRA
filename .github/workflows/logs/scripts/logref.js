@@ -82,7 +82,8 @@ groups.forEach((group, gi) => {
   var v = content;
   
   versionnames.forEach((vn, i) => {
-    if (group.includes(`${vn}_`)) {
+    let subref = group.split("_")[0];
+    if (subref == vn) {
       if (!versions[vn]) versions[vn] = { header: `## ${vn}`, subs: [] };
       
       vsubs = versions[vn].subs;
