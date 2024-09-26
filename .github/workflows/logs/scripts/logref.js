@@ -64,7 +64,7 @@ let content = [
   "this is where log references are for easier navigation<br>",
   '<img height=22 src="https://github.com/ReRand/ACE-ULTRA/actions/workflows/logref.yml/badge.svg" alt="publish">',
   "",
-  "<br>",
+  "---",
   ""
 ];
 
@@ -87,7 +87,6 @@ groups.forEach((group, gi) => {
     let subref = group.split("_")[0];
     if (subref == vn) {
       if (!versions[vn]) versions[vn] = { header: `## ${vn}`, subs: [] };
-      
       vsubs = versions[vn].subs;
     }
   });
@@ -130,8 +129,6 @@ versionnames.forEach((vn, i) => {
     let vsubs = ventry.subs;
 
     let start = [
-      "",
-      "---",
       "",
       ventry.header
     ];
