@@ -114,15 +114,15 @@ groups.forEach((group, gi) => {
 
 versionnames.forEach((vn, i) => {
   if (versions[vn]) {
-    v = versions[vn].sort((a, b) => {
-      return (config.reverseSort) ? b - a : a - b;
-    });
+    let v = versions[vn].sort();
+    v = (config.reverseSort) ? v.reverse() : v;
     
     content = content.concat(v);
   }
 });
 
 content = content.join("\n\n");
+
 
 fs.writeFileSync(logrefdir, content)
 
