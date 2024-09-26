@@ -62,8 +62,10 @@ let content = [
 
   "# LogRef",
   "this is where log references are for easier navigation<br>",
-  '<img height=22 src="https://github.com/ReRand/ACE-ULTRA/actions/workflows/logref.yml/badge.svg" alt="publish">'
-
+  '<img height=22 src="https://github.com/ReRand/ACE-ULTRA/actions/workflows/logref.yml/badge.svg" alt="publish">',
+  "",
+  "<br>",
+  ""
 ];
 
 
@@ -91,7 +93,7 @@ groups.forEach((group, gi) => {
   });
 
   v = {
-    header: `### [${group}](${treelink}) (#${gi})`,
+    header: `### [${group}](${treelink}) (group #${gi})`,
     content: []
   }
 
@@ -127,26 +129,41 @@ versionnames.forEach((vn, i) => {
     let ventry = versions[vn];
     let vsubs = ventry.subs;
 
-    stuff.push(versions[vn].header);
+    let start = [
+      "",
+      "---",
+      "",
+      ventry.header
+    ];
+
+    start.forEach( s => stuff.push(s) );
 
     vsubs = vsubs.sort( (a, b) => {
       return a.header.localeCompare(b.header);
     });
 
     vsubs = (config.reverseSort) ? vsubs.reverse() : vsubs
-    console.log(vsubs);
 
     vsubs.forEach( (sub) => {
-      let { header, content } = sub;
+      let sheader = sub.header;
+      let scontent = sub.content;
 
-      content = (config.reverseSort) ? content.reverse() : content;
+      scontent = (config.reverseSort) ? scontent.reverse() : scontent;
       
-      stuff.push(header);
-      content.forEach(c => stuff.push(c));
+      stuff.push(sheader);
+      scontent.forEach(c => stuff.push(c));
     });
     
     /*v = v.content.sort();
     v = (config.reverseSort) ? v.reverse() : v;*/
+
+    let ends = [
+      "",
+      "---",
+      ""
+    ];
+
+    ends.forEach( e => stuff.push(e) );
     
     content = content.concat(stuff);
   }
