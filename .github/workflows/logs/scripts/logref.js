@@ -78,14 +78,23 @@ groups.forEach((group, gi) => {
   let treelink = `${tree}/${ group.split(" ").join("%20") }`;
   let bloblink = `${blob}/${ group.split(" ").join("%20") }`;
   let logs = fs.readdirSync(groupdir);
+  var vsubs = content;
   var v = content;
   
   versionnames.forEach((vn, i) => {
     if (group.includes(`${vn}_`)) {
-      if (!versions[vn]) versions[vn] = { header: `### [${group}](${treelink}) (#${gi})`, content: [] };
-      v = versions[vn];
+      if (!versions[vn]) versions[vn] = { header: `## ${vn}`, subs: [] };
+      
+      vsubs = versions[vn].subs;
     }
   });
+
+  v = {
+    header: `### [${group}](${treelink}) (#${gi})`,
+    content: []
+  }
+
+  vsubs.push(v);
   
   logs.forEach((log, li) => {
     let logbloblink = `${bloblink}/${ log.split(" ").join("%20") }`;
@@ -112,16 +121,22 @@ groups.forEach((group, gi) => {
 
 versionnames.forEach((vn, i) => {
   if (versions[vn]) {
-    let v = versions[vn].content
-
-    console.log(versions[vn]);
+    let stuff = [];
     
-    v = v.sort();
-    v = (config.reverseSort) ? v.reverse() : v;
+    let ventry = versions[vn];
+    let vsubs = ventry.subs;
 
-    v.unshift(versions[vn].header);
+    stuff.unshift(versions[vn].header);
+
+    vsubs = vsubs.sort( (a, b) => {
+      console.log(a, b);
+      return a - b;
+    });
     
-    content = content.concat(v);
+    /*v = v.content.sort();
+    v = (config.reverseSort) ? v.reverse() : v;*/
+    
+    content = content.concat(stuff);
   }
 });
 
