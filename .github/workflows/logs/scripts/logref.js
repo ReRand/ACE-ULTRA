@@ -81,7 +81,7 @@ groups.forEach((group, gi) => {
   var v = content;
   
   versionnames.forEach((vn, i) => {
-    if (group.includes(vn)) {
+    if (group.includes(`${vn}_`)) {
       if (!versions[vn]) versions[vn] = { header: `### [${group}](${treelink}) (#${gi})`, content: [] };
       v = versions[vn];
     }
@@ -113,13 +113,13 @@ groups.forEach((group, gi) => {
 versionnames.forEach((vn, i) => {
   if (versions[vn]) {
     let v = versions[vn].content
+
+    console.log(versions[vn]);
     
     v = v.sort();
     v = (config.reverseSort) ? v.reverse() : v;
 
     v.unshift(versions[vn].header);
-
-    console.log(v);
     
     content = content.concat(v);
   }
