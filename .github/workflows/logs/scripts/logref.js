@@ -126,13 +126,21 @@ versionnames.forEach((vn, i) => {
     let ventry = versions[vn];
     let vsubs = ventry.subs;
 
-    stuff.unshift(versions[vn].header);
+    stuff.push(versions[vn].header);
 
     vsubs = vsubs.sort( (a, b) => {
       return a.header.localeCompare(b.header);
     });
 
+    vsubs = (config.reverseSort) ? vsubs.reverse() : vsubs
     console.log(vsubs);
+
+    vsubs.forEach( (sub) => {
+      let { header, content } = sub;
+      
+      stuff.push(header);
+      content.forEach(c => stuff.push(c));
+    });
     
     /*v = v.content.sort();
     v = (config.reverseSort) ? v.reverse() : v;*/
