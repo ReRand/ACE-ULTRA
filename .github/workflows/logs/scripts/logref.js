@@ -82,12 +82,10 @@ groups.forEach((group, gi) => {
   
   versionnames.forEach((vn, i) => {
     if (group.includes(vn)) {
-      if (!versions[vn]) versions[vn] = [];
+      if (!versions[vn]) versions[vn] = { header: `### [${group}](${treelink}) (#${gi})`, content: [] };
       v = versions[vn];
     }
   });
-
-  v.push(`### [${group}](${treelink}) (#${gi})`);
   
   logs.forEach((log, li) => {
     let logbloblink = `${bloblink}/${ log.split(" ").join("%20") }`;
@@ -108,14 +106,16 @@ groups.forEach((group, gi) => {
       name = log.replace(".md", "");
     };
     
-    v.push(`${li+1}. ${name} [(${ log })](${ logbloblink }) `)
+    v.content.push(`${li+1}. ${name} [(${ log })](${ logbloblink }) `)
   });
 });
 
 versionnames.forEach((vn, i) => {
   if (versions[vn]) {
-    let v = versions[vn].sort();
+    let v = versions[vn].content.sort();
     v = (config.reverseSort) ? v.reverse() : v;
+
+    v.unshift(versions[vn].header);
     
     content = content.concat(v);
   }
@@ -124,7 +124,7 @@ versionnames.forEach((vn, i) => {
 content = content.join("\n\n");
 
 
-fs.writeFileSync(logrefdir, content)
+fs.writeFileSync(logrefdir, content);
 
 
 console.log(fs.readFileSync(logrefdir, 'utf8'));
