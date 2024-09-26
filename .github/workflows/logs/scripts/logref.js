@@ -119,7 +119,7 @@ versionnames.forEach((vn, i) => {
 
     v.unshift(versions[vn].header);
 
-    print(v);
+    console.log(v);
     
     content = content.concat(v);
   }
