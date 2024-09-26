@@ -112,10 +112,14 @@ groups.forEach((group, gi) => {
 
 versionnames.forEach((vn, i) => {
   if (versions[vn]) {
-    let v = versions[vn].content.sort();
+    let v = versions[vn].content
+    
+    v = v.sort();
     v = (config.reverseSort) ? v.reverse() : v;
 
     v.unshift(versions[vn].header);
+
+    print(v);
     
     content = content.concat(v);
   }
