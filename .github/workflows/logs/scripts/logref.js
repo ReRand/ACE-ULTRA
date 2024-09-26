@@ -129,7 +129,7 @@ versionnames.forEach((vn, i) => {
     stuff.unshift(versions[vn].header);
 
     vsubs = vsubs.sort( (a, b) => {
-      console.log(a.localecompare(b));
+      console.log(a.header.localecompare(b.header));
       return a - b;
     });
     
