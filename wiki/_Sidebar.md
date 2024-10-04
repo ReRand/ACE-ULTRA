@@ -60,7 +60,7 @@
 
 > <tr> <td>
 >
-> <b> [🛈](https://github.com/ReRand/ACE-ULTRA/wiki/Pebble Splasher) Pebble Splasher </b>
+> <b> [🛈](https://github.com/ReRand/ACE-ULTRA/wiki/Pebble%20Splasher) Pebble Splasher </b>
 >
 > </tr> </td>
 
