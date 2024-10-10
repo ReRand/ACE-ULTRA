@@ -19,6 +19,7 @@ Pre-Alpha Version 0.2.0
 - added camera tilt
 - nerfed player walk speed from 25 to 20
 - nerfed slide speed from 45 to 43
+- buffed punch damage from 2 to 15
 
 ### DUNESTONE
 - "DUNESTONE" is the 5th map added to the game and with it comes a new song "SANDGRAIN IRONHIP"
