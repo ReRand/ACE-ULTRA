@@ -20,6 +20,10 @@ Pre-Alpha Version 0.2.0
 - nerfed player walk speed from 25 to 20
 - nerfed slide speed from 45 to 43
 - buffed punch damage from 2 to 15
+- added highlight to players
+- updated CWeld module
+- added freecam stuff
+- added blood effects
 
 ### DUNESTONE
 - "DUNESTONE" is the 5th map added to the game and with it comes a new song "SANDGRAIN IRONHIP"
@@ -27,6 +31,6 @@ Pre-Alpha Version 0.2.0
 
 ### WINGIRON
 - "WINGIRON" is the new revolver
-- it has infinite ammo with each bullet dealing a base 19 damage on bodyshot and 40 on headshot
+- it has infinite ammo with each bullet dealing a base 19 damage on bodyshot and 40 on headshot as well as knockback on the user and player hit putting the "wing" in its name
 - its primary is a slow single-fire but has higher accuracy
 - its alt fire is a fan that fires 6 bullets quickly but has large camera shake and recoil and has a punishing cooldown
