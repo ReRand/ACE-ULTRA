@@ -1,40 +1,35 @@
 {
-	"name": "ACEULTRA",
-	"tree": {
-	  "$className": "DataModel",
-	  "ReplicatedStorage": {
-		"$className": "ReplicatedStorage",
-		"$ignoreUnknownInstances": true,
-		"$path": "src/ReplicatedStorage"
-	  },
-	  "ServerScriptService": {
-		"$className": "ServerScriptService",
-		"$ignoreUnknownInstances": true,
-		"$path": "src/ServerScriptService"
-	  },
-	  "StarterPlayer": {
-		"$className": "StarterPlayer",
-		"StarterCharacter": {
-		  "$className": "Model",
-		  "$ignoreUnknownInstances": true,
-		  "$path": "src/StarterPlayer/StarterCharacter"
-		},
-		"StarterCharacterScripts": {
-		  "$className": "StarterCharacterScripts",
-		  "$ignoreUnknownInstances": true,
-		  "$path": "src/StarterPlayer/StarterCharacterScripts"
-		},
-		"StarterPlayerScripts": {
-		  "$className": "StarterPlayerScripts",
-		  "$ignoreUnknownInstances": true,
-		  "$path": "src/StarterPlayer/StarterPlayerScripts"
-		},
-		"$ignoreUnknownInstances": true
-	  },
-	  "Workspace": {
-		"$className": "Workspace",
-		"$ignoreUnknownInstances": true,
-		"$path": "src/Workspace"
-	  }
-	}
+  "name": "project",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "$ignoreUnknownInstances": true,
+      "$path": "src/ReplicatedStorage"
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "$ignoreUnknownInstances": true,
+      "$path": "src/ServerScriptService"
+    },
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+      "StarterCharacter": {
+        "$className": "Model",
+        "$ignoreUnknownInstances": true,
+        "$path": "src/StarterPlayer/StarterCharacter"
+      },
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "$ignoreUnknownInstances": true,
+        "$path": "src/StarterPlayer/StarterPlayerScripts"
+      },
+      "$ignoreUnknownInstances": true
+    },
+    "Workspace": {
+      "$className": "Workspace",
+      "$ignoreUnknownInstances": true,
+      "$path": "src/Workspace"
+    }
   }
+}

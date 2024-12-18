@@ -1,0 +1,1 @@
+workspace.Stored.Parent = game.ReplicatedStorage;
