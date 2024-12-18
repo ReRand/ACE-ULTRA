@@ -12,6 +12,9 @@ Pre-Alpha Version 0.2.0
 - added alt fires for most of the weapons
 - added slam storage
 - improved viewport
+- added a cooler ui
+- improved codebase
+- implemented new attributes system
 - added song credits pop-in when respawning
 - updated dash to not be trash
 - reduced stamina from 90 to 70
