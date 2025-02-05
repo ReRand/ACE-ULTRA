@@ -56,18 +56,50 @@ export type AceEntity = AceClass & {
 
 
 export type AceExplosionInfo = AceClass & {
-    FilterType : Enum.RaycastFilterType?,
-    Filter : { [number] : Instance }?,
+    FilterType : Enum.RaycastFilterType,
+    Filter : { [number] : Instance },
 
-    OriginPlayer: AceEntity?,
-    Part: Part,
+    OriginEntity : AceEntity?,
+	OriginProjectile : AceProjectile,
 
-	Projectile: AceProjectile
+    MultiHit : boolean,
+    FuseTime : number?,
+    Knockback : boolean,
+    KnockbackMultiplier : number,
+    Cooldown : number,
+    Velocity : number,
+    SetDamage : number?,
+    FallVelocity : number,
+
+    Radius : number,
+    Color : Color3 | BrickColor?,
+    Transparency : number?,
+
+    FireProbability : number,
+    FireInfo : AceFireInfo?,
+}
+
+
+export type AceFireInfo = AceClass & {
+    Color : Color3 | BrickColor?,
+    Transparency : number?,
+
+    OriginEntity : AceEntity?,
+
+    Damage : number,
+    TickTime : number,
+    TotalTime : number,
 }
 
 
 export type AceExplosion = AceClass & {
-    Info: AceExplosionInfo
+    Info : AceExplosionInfo
 }
+
+
+export type AceFire = AceClass & {
+	Info : AceFireInfo
+}
+
 
 return {}
