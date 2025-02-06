@@ -13,7 +13,7 @@ local delayed = {}
 local AceExplosion = {
     ClassName = "AceExplosion"
     
-} :: Types.AceExplosion
+}
 
 
 function AceExplosion.New(Info : Types.AceExplosionInfo?) : Types.AceExplosion
