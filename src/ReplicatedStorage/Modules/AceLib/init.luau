@@ -27,4 +27,6 @@ AceLib.Game: _AceGame = {
     ClassName = "AceGame"
 }
 
+AceLib.Enums = Types.Enums
+
 return AceLib

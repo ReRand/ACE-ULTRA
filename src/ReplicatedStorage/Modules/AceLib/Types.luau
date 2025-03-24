@@ -3,50 +3,32 @@
 --!native
 
 local LemonSignal = require(script.Parent.Dependencies.LemonSignal)
-local Types = {}
-
+local Types = {
+    Enums = {}
+}
 
 --[[ Ace Class ]]--
 -- extends into almost every class
 -- contains base information for classes
 
 Types.AceClass = {
-    ClassName = "AceClass"
+    ClassName = "AceClass",
+    Extensions = {}
 }
 export type _AceClass = {
 	ClassName : string,
+    Extensions: { [number]: string },
+    Metadata: { [string]: any },
 	New : (self : any, ...any?) -> (any?)?,
     Destroy : (self : any) -> nil
 }
 
 
---[[ Ace Enum ]]--
--- enumerations for the game
-
-Types.AceEnum = {
-    ClassName = "AceEnum"
-}
-export type _AceEnum = _AceClass & {
-	Name : string,
-	Enums : { [number]: _AceEnumItem }
-}
-
-
---[[ Ace Enum Item ]]--
--- actual items for enums
-
-Types.AceEnumItem = {
-    ClassName = "AceEnumItem"
-}
-export type _AceEnumItem = _AceClass & {
-	Name : string,
-	Value : number,
-	EnumType : AceEnum
-}
-
-
 export type _AceEntity<T> = _AceClass & {
     Base: T,
+    IsPlayer: boolean,
+    Player: Player?
+    Character: Model?
 
 	Weapons: { [number]: _AceWeapon },
     Perks: { [number]: _AcePerk },
@@ -180,5 +162,38 @@ export type _AceFire = _AceClass & {
 	Info : _AceFireInfo
 }
 
+
+--[[ Ace Enum ]]--
+-- enumerations for the game
+
+Types.AceEnum = {}
+
+function Types.AceEnum.New<T>(items: {}) : T
+    local t = {}
+    for k, v in items do
+        if typeof(items[v]) == "string" then
+            table.insert(t, v);
+        else
+            t[v] = k
+        end
+    end
+    return t : T
+end
+
+export type _AceEnum = { [string]: number }
+export type _ProjectileType = _AceEnum & {}
+export type _PerkType = _AceEnum & {}
+
+Types.Enums.ProjectileType: _ProjectileType = Types.AceEnum.New<_ProjectileType>({
+    [1] = "Bullet"
+})
+
+Types.Enums.PerkType: _PerkType = Types.AceEnum.New<_PerkType>({
+    [1] = "Dash",
+    [2] = "Slide",
+    [3] = "WallSlide",
+    [4] = "WallJump",
+    [5] = "Hook"
+})
 
 return Types

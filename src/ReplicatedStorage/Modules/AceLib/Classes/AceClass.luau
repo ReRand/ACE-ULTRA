@@ -8,13 +8,22 @@ function Types.AceClass:Destroy(self)
     self = nil
 end
 
-function Types.AceClass.Init<T>(self, prototype ...{ [string]: any }) : T
-    for _, t in {...} do
+function Types.AceClass:Super<T>(self, prototype: { Extensions: { [number]: string } }) : T
+    self.Metadata = self.Metadata or {}
+
+    for _, t in prototype do
         for k, v in t do
             self[k] = self[k] or v
         end
     end
-    return self :: T;
+    
+    for _, t in prototype.Extensions do
+        for k, v in t do
+            self[k] = self[k] or v
+        end
+    end
+
+    return self :: T
 end
 
 
