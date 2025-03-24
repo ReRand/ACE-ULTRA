@@ -17,7 +17,12 @@ function Types.AceEntity.New<T>(Base : T, Config : Types._AceEntityConfig?) : Ty
         Base = Base,
 
         Health = 100,
+        Gravity = 9.8,
         Metadata = Config.Metadata or {},
+
+        Dashing = false,
+        Standing = false,
+        Jumping = false,
         
         EntityId = eid,
         Attributes = Attributes.FetchEntity(eid),
