@@ -12,13 +12,16 @@ local AceEntity = {
 }
 
 
-function AceEntity.New(Base : Player | Model) : Types.AceEntity
+function AceEntity.New(Base : Player | Model, Config : AceEntityConfig) : Types.AceEntity
     local eid = Base:GetTag("EntityId")
     local player = Base:IsA("Player") and Base or game.Players.GetPlayerFromCharacter(Base);
     
 
     local self = {
         Base = Base,
+
+        Health = 100,
+        Metadata = {},
         
         EntityId = eid,
         Attributes = Attributes.FetchEntity(eid),
