@@ -3,64 +3,86 @@
 --!native
 
 local LemonSignal = require(script.Parent.Dependencies.LemonSignal)
+local Types = {}
 
 
-export type AceClass = {
+--[[ Ace Class ]]--
+-- extends into almost every class
+-- contains base information for classes
+
+Types.AceClass = {
+    ClassName = "AceClass"
+}
+export type _AceClass = {
 	ClassName : string,
 	New : (self : any, ...any?) -> (any?)?
 }
 
 
-export type AceEnum = AceClass & {
+--[[ Ace Enum ]]--
+-- enumerations for the game
+
+local AceEnum = {
+    ClassName = "AceEnum"
+}
+export type _AceEnum = _AceClass & {
 	Name : string,
-	Enums : { [number]: AceEnumItem }
+	Enums : { [number]: _AceEnumItem }
 }
 
 
-export type AceEnumItem = AceClass & {
+export type _AceEnumItem = _AceClass & {
 	Name : string,
 	Value : number,
 	EnumType : AceEnum
 }
 
 
-export type AceWeapon = AceClass & {
+export type _AceWeapon = _AceClass & {
 	Name : string,
 	Id : string,
-	Entity : AceEntity,
+	Entity : _AceEntity,
 
-	Fire : (AceWeapon) -> (AceProjectile)
+	Fire : (_AceWeapon) -> (_AceProjectile),
+    Fired: LemonSignal.Signal<_AceProjectile>
 }
 
 
-export type AceProjectile = AceClass & {
+export type _AceProjectile = _AceClass & {
 	Name : string,
-	Weapon : AceWeapon,
-	Info : AceProjectileInfo
+	Weapon : _AceWeapon,
+    Id: string,
+	Info : _AceProjectileInfo,
+    Hit : LemonSignal.Signal<Part>
 }
 
 
-export type AceProjectileInfo = AceClass & {
+export type _AceProjectileInfo = _AceClass & {
 	
 }
 
 
-export type AceEntity = AceClass & {
+export type _AceEntity = _AceClass & {
 	Player: Player,
 
-	Weapons: { [number]: AceWeapon },
+	Weapons: { [number]: _AceWeapon },
+    Info: _AceEntityInfo,
 
-	Killed: LemonSignal.Signal<AceEntity, AceEntity, AceWeapon>,
-	Suicided: LemonSignal.Signal<AceEntity>
+	Killed: LemonSignal.Signal<_AceEntity, _AceEntity, _AceWeapon>,
+	Suicided: LemonSignal.Signal<_AceEntity>
+}
+
+export type _AceEntityInfo = _AceClass & {
+    Metadata: { [string]: any }?
 }
 
 
-export type AceExplosionInfo = AceClass & {
+export type _AceExplosionInfo = _AceClass & {
     FilterType : Enum.RaycastFilterType,
     Filter : { [number] : Instance },
 
-    OriginEntity : AceEntity?,
-	OriginProjectile : AceProjectile,
+    OriginEntity : _AceEntity?,
+	OriginProjectile : _AceProjectile,
 
     MultiHit : boolean,
     FuseTime : number?,
@@ -76,15 +98,15 @@ export type AceExplosionInfo = AceClass & {
     Transparency : number?,
 
     FireProbability : number,
-    FireInfo : AceFireInfo?,
+    FireInfo : _AceFireInfo?,
 }
 
 
-export type AceFireInfo = AceClass & {
+export type _AceFireInfo = _AceClass & {
     Color : Color3 | BrickColor?,
     Transparency : number?,
 
-    OriginEntity : AceEntity?,
+    OriginEntity : _AceEntity?,
 
     Damage : number,
     TickTime : number,
@@ -92,13 +114,13 @@ export type AceFireInfo = AceClass & {
 }
 
 
-export type AceExplosion = AceClass & {
-    Info : AceExplosionInfo
+export type _AceExplosion = _AceClass & {
+    Info : _AceExplosionInfo
 }
 
 
-export type AceFire = AceClass & {
-	Info : AceFireInfo
+export type _AceFire = _AceClass & {
+	Info : _AceFireInfo
 }
 
 

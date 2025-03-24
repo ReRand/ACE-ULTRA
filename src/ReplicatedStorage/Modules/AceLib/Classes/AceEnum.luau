@@ -5,10 +5,6 @@
 local Types = require(script.Parent.Parent.Types)
 local AceEnumItem = require(script.Parent.AceEnumItem)
 
-local AceEnum = {
-    ClassName = "AceEnum"
-}
-
 
 function AceEnum.New(Name : string, Items : { [number] : string }) : Types.AceEnum
     local self = table.clone(AceEnum)

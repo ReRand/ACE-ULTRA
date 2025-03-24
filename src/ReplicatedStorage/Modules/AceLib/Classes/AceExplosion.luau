@@ -27,7 +27,7 @@ function AceExplosion.New(Info : Types.AceExplosionInfo?) : Types.AceExplosion
 end
 
 
-function AceExplosion.Prime()
+function AceExplosion:Prime()
 end
 
 

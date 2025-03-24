@@ -4,24 +4,20 @@
 
 
 local Types = require(script.Parent.Parent.Types)
+local Class = require(script.Parent.Parent.Class)
 local Attributes = require(game.ReplicatedStorage.Modules.Attributes)
 
 
-local AceEntity = {
-    ClassName = "AceEntity",
-}
-
-
-function AceEntity.New(Base : Player | Model, Config : AceEntityConfig) : Types.AceEntity
+function Types.AceEntity.New(Base : Player | Model, Config : Types._AceEntityConfig?) : Types._AceEntity
     local eid = Base:GetTag("EntityId")
-    local player = Base:IsA("Player") and Base or game.Players.GetPlayerFromCharacter(Base);
-    
+    local player = Base:IsA("Player") and Base or game.Players.GetPlayerFromCharacter(Base)
+    Config = Config or {}
 
     local self = {
         Base = Base,
 
         Health = 100,
-        Metadata = {},
+        Metadata = Config.Metadata or {},
         
         EntityId = eid,
         Attributes = Attributes.FetchEntity(eid),
@@ -34,8 +30,8 @@ function AceEntity.New(Base : Player | Model, Config : AceEntityConfig) : Types.
         Perks = {},
     }
 
-    return self :: Types.AceEntity
+    return Class.Init<Types._AceEntity>(self, Types.AceEntity)
 end
 
 
-return AceEntity
+return Types.AceEntity
