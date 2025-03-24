@@ -3,32 +3,28 @@
 --!native
 
 local Types = require(script.Parent.Parent.Types)
-local AceExplosionInfo = require(script.Parent.AceExplosionInfo)
 
 local Attributes = require(game.ReplicatedStorage.Modules.Attributes)
 local TweenService = game:GetService("TweenService")
 
 local delayed = {}
 
-local AceExplosion = {
-    ClassName = "AceExplosion"
-    
-}
 
-
-function AceExplosion.New(Info : Types.AceExplosionInfo?) : Types.AceExplosion
-    Info = (Info and Info or AceExplosionInfo.New()) :: Types.AceExplosionInfo
+function Types.AceExplosion.New(Info : Types._AceExplosionInfo?) : Types._AceExplosion
+    Info = (Info or Types.AceExplosionInfo.New()) :: Types._AceExplosionInfo
     
     local self = {
-        Info = Info
+        Info = Info,
+        Hits = {},
+        Alive = false,
     }
 
     return self :: Types.AceExplosion
 end
 
 
-function AceExplosion:Prime()
+function Types.AceExplosion:Prime()
 end
 
 
-return AceExplosion
+return Types.AceExplosion

@@ -8,7 +8,7 @@ local Class = require(script.Parent.Parent.Class)
 local Attributes = require(game.ReplicatedStorage.Modules.Attributes)
 
 
-function Types.AceEntity.New(Base : Player | Model, Config : Types._AceEntityConfig?) : Types._AceEntity
+function Types.AceEntity.New<T>(Base : T, Config : Types._AceEntityConfig?) : Types._AceEntity<T>
     local eid = Base:GetTag("EntityId")
     local player = Base:IsA("Player") and Base or game.Players.GetPlayerFromCharacter(Base)
     Config = Config or {}
@@ -30,7 +30,7 @@ function Types.AceEntity.New(Base : Player | Model, Config : Types._AceEntityCon
         Perks = {},
     }
 
-    return Class.Init<Types._AceEntity>(self, Types.AceEntity)
+    return Class.Init<Types._AceEntity<T>>(self, Types.AceEntity)
 end
 
 

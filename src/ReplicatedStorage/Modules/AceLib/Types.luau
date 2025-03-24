@@ -15,14 +15,15 @@ Types.AceClass = {
 }
 export type _AceClass = {
 	ClassName : string,
-	New : (self : any, ...any?) -> (any?)?
+	New : (self : any, ...any?) -> (any?)?,
+    Destroy : (self : any) -> nil
 }
 
 
 --[[ Ace Enum ]]--
 -- enumerations for the game
 
-local AceEnum = {
+Types.AceEnum = {
     ClassName = "AceEnum"
 }
 export type _AceEnum = _AceClass & {
@@ -31,6 +32,12 @@ export type _AceEnum = _AceClass & {
 }
 
 
+--[[ Ace Enum Item ]]--
+-- actual items for enums
+
+Types.AceEnumItem = {
+    ClassName = "AceEnumItem"
+}
 export type _AceEnumItem = _AceClass & {
 	Name : string,
 	Value : number,
@@ -38,34 +45,11 @@ export type _AceEnumItem = _AceClass & {
 }
 
 
-export type _AceWeapon = _AceClass & {
-	Name : string,
-	Id : string,
-	Entity : _AceEntity,
-
-	Fire : (_AceWeapon) -> (_AceProjectile),
-    Fired: LemonSignal.Signal<_AceProjectile>
-}
-
-
-export type _AceProjectile = _AceClass & {
-	Name : string,
-	Weapon : _AceWeapon,
-    Id: string,
-	Info : _AceProjectileInfo,
-    Hit : LemonSignal.Signal<Part>
-}
-
-
-export type _AceProjectileInfo = _AceClass & {
-	
-}
-
-
-export type _AceEntity = _AceClass & {
-	Player: Player,
+export type _AceEntity<T> = _AceClass & {
+    Base: T,
 
 	Weapons: { [number]: _AceWeapon },
+    Perks: { [number]: _AcePerk },
     Info: _AceEntityInfo,
 
 	Killed: LemonSignal.Signal<_AceEntity, _AceEntity, _AceWeapon>,
@@ -77,6 +61,67 @@ export type _AceEntityInfo = _AceClass & {
 }
 
 
+--[[ Ace Weapon ]]--
+-- weapons like guns or melee
+
+Types.AceWeapon = {
+    ClassName = "AceWeapon"
+}
+export type _AceWeapon = _AceClass & {
+	Name : string,
+	Id : string,
+	ParentEntity : _AceEntity,
+    Projectiles: { [int], _AceProjectile },
+
+	Fire : (_AceWeapon) -> (_AceProjectile),
+    Fired: LemonSignal.Signal<_AceProjectile>
+}
+
+
+--[[ Ace Projectile ]]--
+-- projectiles fired from weapons
+
+Types.AceEnumItem = {
+    ClassName = "AceEnumItem"
+}
+export type _AceProjectile = _AceClass & {
+	Name : string,
+    Id: string,
+
+	Info : _AceProjectileInfo,
+
+    Hit : LemonSignal.Signal<Part>
+}
+
+
+export type _AceProjectileInfo = _AceClass & {
+	
+}
+
+Types.AceExplosionInfo = {
+    ClassName = "AceExplosionInfo",
+    FilterType = Enum.RaycastFilterType.Exclude,
+    Filter = {},
+
+    OriginEntity = nil,
+
+    MultiHit = false,
+    FuseTime = nil,
+    Knockback = true,
+    KnockbackMultiplier = 5,
+    Cooldown = 1,
+    Velocity = 300,
+    SetDamage = nil,
+    FallVelocity = 1,
+
+    Radius = 30,
+    Color = nil,
+    Transparency = nil,
+
+    FireProbability = 1,
+    FireInfo = nil
+
+}
 export type _AceExplosionInfo = _AceClass & {
     FilterType : Enum.RaycastFilterType,
     Filter : { [number] : Instance },
@@ -101,7 +146,19 @@ export type _AceExplosionInfo = _AceClass & {
     FireInfo : _AceFireInfo?,
 }
 
+Types.AceFireInfo = {
+    ClassName = "AceFireInfo",
+    Color = nil,
+    Transparency = nil,
 
+    OriginEntity = nil,
+
+    FireProbability = 1,
+    Damage = 1,
+    TickTime = 1,
+    TotalTime = 5,
+
+}
 export type _AceFireInfo = _AceClass & {
     Color : Color3 | BrickColor?,
     Transparency : number?,
@@ -124,4 +181,4 @@ export type _AceFire = _AceClass & {
 }
 
 
-return {}
+return Types

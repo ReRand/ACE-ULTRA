@@ -6,10 +6,10 @@ local Types = require(script.Parent.Parent.Types)
 
 
 function Types.AceWeapon.New() : Types._AceWeapon
-    local self = table.clone(AceWeapon);
+    local self = table.clone(Types.AceWeapon);
 
-    return self :: Types.AceWeapon
+    return self :: Types._AceWeapon
 end
 
 
-return AceWeapon
+return Types.AceWeapon

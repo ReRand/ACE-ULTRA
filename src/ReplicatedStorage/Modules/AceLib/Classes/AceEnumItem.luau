@@ -5,23 +5,16 @@
 local Types = require(script.Parent.Parent.Types);
 
 
-local AceEnumItem = {
-    ClassName = "AceEnumItem"
-
-}
-
-
-function AceEnumItem.New(EnumType: Types.AceEnum, Name : string, Value : number) : Types.AceEnumItem
-    local self = table.clone(AceEnumItem);
+function Types.AceEnumItem.New(EnumType: Types._AceEnum, Name : string, Value : number) : Types._AceEnumItem
+    local self = table.clone(Types.AceEnumItem);
 
     self.Name = Name
     self.EnumType = EnumType
     self.Value = Value
 
-    EnumType.Items[Name] = self :: Types.AceEnumItem
-
-    return self :: Types.AceEnumItem
+    EnumType.Items[Name] = self :: Types._AceEnumItem
+    return self :: Types._AceEnumItem
 end
 
 
-return AceEnumItem
+return Types.AceEnumItem
