@@ -5,10 +5,6 @@
 local AceLib = require(game.ReplicatedStorage.Modules.AceLib)
 local Nodes = require(game.ReplicatedStorage.Modules.AceLib.Nodes)
 
-type CreateNode<T> = (T) -> T
-
-AceLib.CreateNode<Nodes._Entity>
-
-local entity = AceLib.CreateNode("Entity") :: Nodes._Entity
+local entity = AceLib.CreateNode::<Nodes._Entity>("Entity")
 
 entity:Kill("a")
