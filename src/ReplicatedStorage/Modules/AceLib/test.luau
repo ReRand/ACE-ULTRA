@@ -5,7 +5,7 @@
 local AceLib = require(game.ReplicatedStorage.Modules.AceLib)
 local Nodes = require(game.ReplicatedStorage.Modules.AceLib.Nodes)
 
-type CreateNode<T> = (A)
+type CreateNode<T> = (T) -> T
 
 AceLib.CreateNode<Nodes._Entity>
 
