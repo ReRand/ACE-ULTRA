@@ -18,13 +18,8 @@ local Nodes = require(script.Nodes)
 AceLib.Nodes = Nodes
 
 
-type Constructor<T> = {
-	New: () -> any
-}
-
-
-function AceLib.CreateNode(name : string, ...)
-	return Nodes[name].New(...)
+function AceLib.CreateNode<T>(name : string, ...): T
+	return Nodes[name].New(...) :: T
 end
 
 
