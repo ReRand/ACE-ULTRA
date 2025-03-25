@@ -57,6 +57,13 @@ function Nodes.Init(self: { [string]: any }, from: { [string]: any })
 end
 
 
+export type _BaseNode = {
+	NodeName: string,
+	Extensions: { [number]: string },
+	Prototype: _Node,
+}
+
+
 
 --[[ Ace Class ]]--
 -- extends into almost every class
@@ -82,7 +89,7 @@ export type _Node = {
 --[[ Ace Entity Collection ]]--
 -- collection of entities with functions relating to them
 do local n, t = Nodes.New("EntityCollection", "Node") Nodes[n] = t :: _EntityCollectionStatic end
-export type _EntityCollectionStatic = _NodeStatic & {
+export type _EntityCollectionStatic = _BaseNode & {
 	New : (..._Entity) -> _EntityCollection,
 }
 export type _EntityCollection = _Node & { [string]: _Entity }
@@ -92,7 +99,7 @@ export type _EntityCollection = _Node & { [string]: _Entity }
 --[[ Ace Entity ]]--
 -- entity class covering ai and players
 do local n, t = Nodes.New("Entity", "Node") Nodes[n] = t :: _EntityStatic end
-export type _EntityStatic = _NodeStatic & {
+export type _EntityStatic = _BaseNode & {
 	New : (base: Player | Model, info : _EntityInfo) -> _Entity,
 }
 export type _Entity = _Node & {
@@ -116,7 +123,7 @@ export type _Entity = _Node & {
 --[[ Ace Entity Info ]]--
 -- info for entity instances
 do local n, t = Nodes.New("EntityInfo", "Node") Nodes[n] = t :: _EntityInfoStatic end
-export type _EntityInfoStatic = _NodeStatic & {
+export type _EntityInfoStatic = _BaseNode & {
 	New : (info: _EntityInfo) -> _EntityInfo,
 }
 export type _EntityInfo = _Node & {
@@ -128,7 +135,7 @@ export type _EntityInfo = _Node & {
 --[[ Ace Weapon ]]--
 -- weapons like guns or melee
 do local n, t = Nodes.New("Weapon", "Node") Nodes[n] = t :: _WeaponStatic end
-export type _WeaponStatic = _NodeStatic & {
+export type _WeaponStatic = _BaseNode & {
 	New : () -> _Weapon,
 }
 export type _Weapon = _Node & {
@@ -144,7 +151,7 @@ export type _Weapon = _Node & {
 --[[ Ace Perk ]]--
 -- perk class
 do local n, t = Nodes.New("Perk", "Node") Nodes[n] = t :: _PerkStatic end
-export type _PerkStatic = _NodeStatic & {
+export type _PerkStatic = _BaseNode & {
 	New : () -> _Perk,
 }
 export type _Perk = _Node & {
@@ -157,7 +164,7 @@ export type _Perk = _Node & {
 --[[ Ace Projectile ]]--
 -- projectiles fired from weapons
 do local n, t = Nodes.New("Projectile", "Node") Nodes[n] = t :: _ProjectileStatic end
-export type _ProjectileStatic = _NodeStatic & {
+export type _ProjectileStatic = _BaseNode & {
 	New : () -> _Projectile,
 }
 export type _Projectile = _Node & {
@@ -173,8 +180,8 @@ export type _Projectile = _Node & {
 
 --[[ Ace Projectile Info ]]--
 -- info about projectiles
-do local n, t = Nodes.New("ProjectileInfo", "Node") Nodes[n] = t :: _ProjectileInfo end
-export type _ProjectileInfoStatic = _NodeStatic & {
+do local n, t = Nodes.New("ProjectileInfo", "Node") Nodes[n] = t :: _ProjectileInfoStatic end
+export type _ProjectileInfoStatic = _BaseNode & {
 	New : (info: _ProjectileInfo) -> _ProjectileInfo,
 }
 export type _ProjectileInfo = _Node & {
@@ -185,48 +192,27 @@ export type _ProjectileInfo = _Node & {
 
 --[[ Ace Explosion Info ]]--
 -- info for explosion instances
-do local n, t = Nodes.New("ExplosionInfo", "Node") Nodes[n] = t :: _ExplosionInfo end
-Nodes.ExplosionInfo = {
-	FilterType = Enum.RaycastFilterType.Exclude,
-	Filter = {},
-
-	OriginEntity = nil,
-
-	MultiHit = false,
-	FuseTime = nil,
-	Knockback = true,
-	KnockbackMultiplier = 5,
-	Cooldown = 1,
-	Velocity = 300,
-	SetDamage = nil,
-	FallVelocity = 1,
-
-	Radius = 30,
-	Color = nil,
-	Transparency = nil,
-
-	FireProbability = 1,
-	FireInfo = nil
-
+do local n, t = Nodes.New("ExplosionInfo", "Node") Nodes[n] = t :: _ExplosionInfoStatic end
+export type _ExplosionInfoStatic = _BaseNode & {
+	New : (projectile: _Projectile, info: _ExplosionInfo) -> _ExplosionInfo,
 }
 export type _ExplosionInfo = _Node & {
 	FilterType : Enum.RaycastFilterType,
 	Filter : { [number] : Instance },
 
-	OriginEntity : _Entity?,
 	OriginProjectile : _Projectile,
 
 	MultiHit : boolean,
-	FuseTime : number?,
+	FuseTime : number,
 	Knockback : boolean,
 	KnockbackMultiplier : number,
 	Cooldown : number,
 	Velocity : number,
-	SetDamage : number?,
+	SetDamage : number | boolean, -- if SetDamage is false then it'll not do anything if it's set to a number it'll use that damage
 	FallVelocity : number,
 
 	Radius : number,
-	Color : Color3 | BrickColor?,
+	Color : Color3 | BrickColor,
 	Transparency : number?,
 
 	FireProbability : number,
@@ -238,23 +224,14 @@ export type _ExplosionInfo = _Node & {
 --[[ Ace Fire Info ]]--
 -- info for fire instances
 do local n, t = Nodes.New("FireInfo", "Node") Nodes[n] = t :: _FireInfo end
-Nodes.FireInfo = {
-	Color = nil,
-	Transparency = nil,
-
-	OriginEntity = nil,
-
-	FireProbability = 1,
-	Damage = 1,
-	TickTime = 1,
-	TotalTime = 5,
-
+export type _FireInfoStatic = _BaseNode & {
+	New : (entity: _Entity, info: _FireInfo) -> _FireInfo,
 }
 export type _FireInfo = _Node & {
-	Color : Color3 | BrickColor?,
-	Transparency : number?,
+	Color : Color3 | BrickColor,
+	Transparency : number,
 
-	OriginEntity : _Entity?,
+	OriginEntity : _Entity,
 
 	Damage : number,
 	TickTime : number,
@@ -266,6 +243,9 @@ export type _FireInfo = _Node & {
 --[[ Ace Explosion ]]--
 -- big booms
 do local n, t = Nodes.New("Explosion", "Node") Nodes[n] = t :: _Explosion end
+export type _ExplosionStatic = _BaseNode & {
+	New : (info: _ExplosionInfo?) -> _Explosion?,
+}
 export type _Explosion = _Node & {
 	Info : _ExplosionInfo
 }
