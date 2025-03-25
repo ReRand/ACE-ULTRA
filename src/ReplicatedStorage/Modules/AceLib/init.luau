@@ -1,32 +1,42 @@
 --!optimize 2
---!nocheck
+--!nonstrict
 --!native
 
 local AceLib = {
-    Classes = script.Classes,
-    Dependencies = script.Dependencies,
+	Classes = script.Classes
 }
 
-for _, mod in script:GetDescendants() do
-    if mod:IsA("ModuleScript") then
-        AceLib[mod.Name] = require(mod)
-    end
+
+for _, mod: ModuleScript in script:GetDescendants() do
+	if mod:IsA("ModuleScript") then
+		require(mod)
+	end
 end
 
-local Types = require(script.Parent.Types);
-AceLib.Types = types;
 
-AceLib.Players: { [string]: Types._AceEntity<Player> } = {}
-AceLib.Entities: { [string]: Types._AceEntity<Model> } = {}
+local Nodes = require(script.Nodes)
+AceLib.Nodes = Nodes
 
-type _AceGame = Types._AceClass & {
-    
+
+type Constructor<T> = {
+	New: () -> unknown
 }
 
-AceLib.Game: _AceGame = {
-    ClassName = "AceGame"
+
+function AceLib.CreateNode(name : string, ...)
+	return Nodes[name].New(...)
+end
+
+
+AceLib.Entities = {}
+
+
+type _AceGame = Nodes._Node & {
+
 }
 
-AceLib.Enums = Types.Enums
+
+AceLib.Enums = Nodes.Enums
+
 
 return AceLib
