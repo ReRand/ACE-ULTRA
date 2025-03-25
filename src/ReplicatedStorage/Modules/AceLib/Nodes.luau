@@ -19,6 +19,7 @@ export type NodeList = {
 
 	Node: _NodeStatic,
 	EntityCollection: _EntityCollectionStatic,
+	Collection: _CollectionStatic,
 	Entity: _EntityStatic,
 	EntityInfo: _EntityInfoStatic,
 	Weapon: _WeaponStatic,
@@ -104,10 +105,32 @@ export type _Node = {
 }
 
 
+--[[ Ace Collection ]]--
+-- collection of entities with functions relating to them
+do local n, t = Nodes.New("Collection", "Node") Nodes[n] = t :: _CollectionStatic end
+export type _CollectionStatic = _BaseNode & {
+	New : <T>(items: { [number]: _CollectionItem }) -> _Collection<T>,
+}
+export type Collection<T> = _Node & { 
+	[number]: _CollectionItem
+}
+
+
+--[[ Ace Collection Item ]]--
+-- collection of entities with functions relating to them
+do local n, t = Nodes.New("CollectionItem", "Node") Nodes[n] = t :: _CollectionItemStatic end
+export type _CollectionItemStatic = _BaseNode & {
+	New : (key: any, value: any?) -> CollectionItem,
+}
+export type CollectionItem<T> = _Node & { 
+	key: any,
+	value: any?
+}
+
 
 --[[ Ace Entity Collection ]]--
 -- collection of entities with functions relating to them
-do local n, t = Nodes.New("EntityCollection", "Node") Nodes[n] = t :: _EntityCollectionStatic end
+do local n, t = Nodes.New("EntityCollection", "Collection") Nodes[n] = t :: _EntityCollectionStatic end
 export type _EntityCollectionStatic = _BaseNode & {
 	New : (..._Entity) -> _EntityCollection,
 }
