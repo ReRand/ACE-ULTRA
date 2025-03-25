@@ -18,9 +18,7 @@ local Nodes = require(script.Nodes)
 AceLib.Nodes = Nodes
 
 
-function AceLib.CreateNode<T>(name : string, ...): T
-	return Nodes[name].New(...) :: T
-end
+AceLib.CreateNode = Nodes.Spawn
 
 
 AceLib.Entities = {}
