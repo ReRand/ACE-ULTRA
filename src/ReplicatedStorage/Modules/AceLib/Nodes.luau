@@ -8,9 +8,14 @@ local Nodes = {
 	Enums = {}
 }
 
+local uuid = 0
+
+
 export type NodeList = {
 	Enums: {},
+	New: (NodeName: string, ...any) -> (string, _BaseNode)
 	Init: (self: { [string]: any }, from: { [string]: any }) -> any,
+	Spawn: <T>(name : string, ...any) : T,
 
 	Node: _NodeStatic,
 	EntityCollection: _EntityCollectionStatic,
@@ -23,16 +28,31 @@ export type NodeList = {
 }
 
 
-function Nodes.New( NodeName: string, ...)
+function Nodes.Spawn<T>(name : string, ...): T
+	return Nodes[name].New(...) :: T
+end
+
+
+function Nodes.New( NodeName: string, ...): (string, _BaseNode)
 	local self = {
 		NodeName =  NodeName,
 		Extensions = #{...} > 0 and {...} or {},
 		Prototype = {}
 	}
 
-	return NodeName, self
+	return NodeName, (self :: _BaseNode)
 end
 
+local function extend(self, from)
+	for _, t in from.Extensions do
+		local node = Nodes[t]
+		for k, v in node.Prototype do
+			self[k] = self[k] or v
+		end
+
+		extend(node)
+	end
+end
 
 function Nodes.Init(self: { [string]: any }, from: { [string]: any })
 	self.NodeName = from.NodeName or "Node"
@@ -41,17 +61,16 @@ function Nodes.Init(self: { [string]: any }, from: { [string]: any })
 	self.Parent = self.Parent
 	self.Index = self.Index or 1
 
+	self.UID = id
+	id += 1
+
 	-- inherit from node type's prototype
 	for k, v in from.Prototype do
 		self[k] = self[k] or v
 	end
 
 	-- inherit from node's extensions
-	for _, t in from.Extensions do
-		for k, v in Nodes[t].Prototype do
-			self[k] = self[k] or v
-		end
-	end
+	extend(self, from)
 
 	return self
 end
