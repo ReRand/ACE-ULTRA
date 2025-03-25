@@ -18,7 +18,7 @@ end
 
 
 function Nodes.Node.Prototype:AddChild<T>(name: string, ...): T
-	local node = Nodes.Spawn::<T>(name, ...)
+	local node = Nodes.Spawn<<T>>(name, ...)
 	self.Children:Add(node)
 	reutrn node
 end
