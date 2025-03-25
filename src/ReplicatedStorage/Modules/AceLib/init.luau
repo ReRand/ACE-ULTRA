@@ -19,7 +19,7 @@ AceLib.Nodes = Nodes
 
 
 type Constructor<T> = {
-	New: () -> unknown
+	New: () -> any
 }
 
 

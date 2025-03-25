@@ -10,7 +10,7 @@ local Nodes = {
 
 export type NodeList = {
 	Enums: {},
-	Init: (self: { [string]: any }, from: { [string]: any }) -> unknown,
+	Init: (self: { [string]: any }, from: { [string]: any }) -> any,
 
 	Node: _NodeStatic,
 	EntityCollection: _EntityCollectionStatic,
@@ -105,7 +105,7 @@ export type _Entity = _Node & {
 	Perks: { [number]: _Perk },
 	Info: _EntityInfo,
 	
-	Kill: (self: unknown, reason: string) -> any,
+	Kill: (self: any, reason: string) -> any,
 
 	Killed: LemonSignal.Signal<string>,
 	Suicided: LemonSignal.Signal<string, string>
