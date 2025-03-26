@@ -110,6 +110,29 @@ export type _Node = {
 }
 
 
+--[[ Ace Entity ]]--
+-- entity class covering ai and players
+do local n, t = Nodes.New("Entity", "Node") Nodes[n] = t :: _EntityStatic end
+export type _EntityStatic = _BaseStaticNode & {
+	New : (base: Player | Model, info : _EntityInfo) -> _Entity,
+}
+export type _Entity = _Node & {
+	Base: Player | Model,
+	IsPlayer: boolean,
+	Player: Player?,
+	Character: Model?,
+
+	Weapons: { [number]: _Weapon },
+	Perks: { [number]: _Perk },
+	Info: _EntityInfo,
+
+	Kill: (self: any, reason: string) -> any,
+
+	Killed: LemonSignal.Signal<string>,
+	Suicided: LemonSignal.Signal<string, string>
+}
+
+
 
 --[[ Ace Collection ]]--
 -- collection of entities with functions relating to them
@@ -138,29 +161,6 @@ export type _CollectionItem<K,V> = _Node & {
 	value: V?
 }
 
-
-
---[[ Ace Entity ]]--
--- entity class covering ai and players
-do local n, t = Nodes.New("Entity", "Node") Nodes[n] = t :: _EntityStatic end
-export type _EntityStatic = _BaseStaticNode & {
-	New : (base: Player | Model, info : _EntityInfo) -> _Entity,
-}
-export type _Entity = _Node & {
-	Base: Player | Model,
-	IsPlayer: boolean,
-	Player: Player?,
-	Character: Model?,
-
-	Weapons: { [number]: _Weapon },
-	Perks: { [number]: _Perk },
-	Info: _EntityInfo,
-
-	Kill: (self: any, reason: string) -> any,
-
-	Killed: LemonSignal.Signal<string>,
-	Suicided: LemonSignal.Signal<string, string>
-}
 
 
 
