@@ -37,14 +37,14 @@ function Nodes.Spawn<T>(name : string, ...): T
 end
 
 
-function Nodes.New( NodeName: string, ...): (string, _BaseStaticNode)
+function Nodes.New( NodeName: string, ...): (string, _Node)
 	local self = {
 		NodeName =  NodeName,
 		Extensions = #{...} > 0 and {...} or {},
 		Prototype = {}
 	}
 
-	return NodeName, (self :: _BaseStaticNode)
+	return NodeName, (self :: _Node)
 end
 
 local function extend(self, from)
