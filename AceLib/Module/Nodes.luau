@@ -157,7 +157,7 @@ export type _CollectionStatic = _BaseStaticNode & {
 export type _Collection<K,V> = _Node & { 
 	[number]: _CollectionItem<K,V>,
 
-	Add: <K,V>(self: any, key: K, value: V) -> _CollectionItem<K,V>,
+	Add: (self: any, key: K, value: V) -> _CollectionItem<K,V>,
 	GetItems: (self: any) -> { [K]: V },
 	ForEach: (self: any, callback: (k: K, v: V, i: number?) -> nil) -> nil
 }
