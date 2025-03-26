@@ -37,15 +37,16 @@ function Nodes.Spawn<T>(name : string, ...): T
 end
 
 
-function Nodes.New( NodeName: string, ...): (string, _Node)
+function Nodes.New( NodeName: string, ...): (string, _BaseStaticNode)
 	local self = {
 		NodeName =  NodeName,
 		Extensions = #{...} > 0 and {...} or {},
 		Prototype = {}
 	}
 
-	return NodeName, (self :: _Node)
+	return NodeName, (self :: _BaseStaticNode)
 end
+
 
 local function extend(self, from)
 	for _, t in from.Extensions do
@@ -57,6 +58,7 @@ local function extend(self, from)
 		extend(self, node)
 	end
 end
+
 
 function Nodes.Init(self: { [any]: any }, from: { [any]: any })
 	self.NodeName = from.NodeName or "Node"
@@ -80,6 +82,7 @@ function Nodes.Init(self: { [any]: any }, from: { [any]: any })
 end
 
 
+
 export type _BaseStaticNode = {
 	NodeName: string,
 	Extensions: { [number]: string },
@@ -100,11 +103,12 @@ export type _Node = {
 	Metadata: {},
 	Children: {},
 	Parent: _Node,
-	
+
 	Destroy : (self : any) -> nil,
 	Clone : (self : any) -> _Node,
 	AddChild : (self : any, name : string, ...any) -> _Node,
 }
+
 
 
 --[[ Ace Collection ]]--
@@ -115,11 +119,12 @@ export type _CollectionStatic = _BaseStaticNode & {
 }
 export type _Collection<K,V> = _Node & { 
 	[number]: _CollectionItem<K,V>,
-	
+
 	Add: <K,V>(self: any, key: K, value: V) -> _CollectionItem<K,V>,
 	GetItems: <K,V>(self: any) -> { [K]: V },
 	ForEach: <K,V>(self: any, callback: (k: K, v: V, i: number?) -> nil) -> nil
 }
+
 
 
 --[[ Ace Collection Item ]]--
