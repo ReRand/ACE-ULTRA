@@ -13,14 +13,14 @@ end
 
 
 function Nodes.Node.Prototype:Clone()
-	
+
 end
 
 
-function Nodes.Node.Prototype:AddChild<T>(name: string, ...): T
-	local node = Nodes.Spawn<<T>>(name, ...)
+function Nodes.Node.Prototype:AddChild(name: string, ...): Nodes._Node
+	local node = Nodes.Spawn(name, ...)
 	self.Children:Add(node)
-	reutrn node
+	return node
 end
 
 

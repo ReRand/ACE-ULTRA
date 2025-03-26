@@ -5,6 +5,16 @@
 local AceLib = require(game.ReplicatedStorage.Modules.AceLib)
 local Nodes = require(game.ReplicatedStorage.Modules.AceLib.Nodes)
 
-local entity = AceLib.CreateNode<<Nodes._Entity>>("Entity")
+local collection = Nodes.Collection.New({
+	{ 1, "foo" },
+	{ 2, "a" }
+}) :: Nodes._Collection<number, string>;
 
-entity:Kill("a")
+
+collection:GetItems()
+
+
+local entity = Nodes.Entity.New() :: Nodes._Entity
+
+print(collection)
+print(entity)

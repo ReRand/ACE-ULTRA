@@ -2,19 +2,37 @@
 --!nonstrict
 --!native
 
+
 local Nodes = require(script.Parent.Parent.Nodes)
 local RunService = game:GetService("RunService")
 
 
-function Nodes.ExplosionInfo.New(info : Nodes._ExplosionInfo?) : Nodes._Explosion?
-    info = info or Nodes.ExplosionInfo.New()
-    
-    local self = {
-        Info = info
-    }
-
-	return Nodes.Init({}, Nodes.Explosion) :: Nodes._Explosion
+function Nodes.Entity.New(base: Player | Model, info : Nodes._EntityInfo?) : Nodes._Entity
+	local self = {
+		Base = base,
+		Info = info,
+		
+		Health = 100,
+		Gravity = 9.8,
+		Metadata = info and info.Metadata or {},
+		
+		Dashing = false,
+		Standing = false,
+		Jumping = false,
+		
+		Weapons = {},
+		Perks = {}
+	}
+	
+	return Nodes.Init(self, Nodes.Entity) :: Nodes._Entity
 end
 
 
-return Nodes.Explosion :: Nodes._ExplosionStatic
+function Nodes.Entity.Prototype:Kill(reason)
+	if RunService:IsServer() then
+		print(reason)
+	end
+end
+
+
+return Nodes.Entity :: Nodes._EntityStatic
