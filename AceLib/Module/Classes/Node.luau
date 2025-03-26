@@ -29,4 +29,8 @@ function Nodes.Node.New() : Nodes._Node
 end
 
 
+function Nodes.Node.Prototype:GetRemote() : _Node
+end
+
+
 return Nodes.Node :: Nodes._NodeStatic
