@@ -110,6 +110,7 @@ export type _Node = {
 }
 
 
+
 --[[ Ace Entity ]]--
 -- entity class covering ai and players
 do local n, t = Nodes.New("Entity", "Node") Nodes[n] = t :: _EntityStatic end
