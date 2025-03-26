@@ -158,8 +158,8 @@ export type _Collection<K,V> = _Node & {
 	[number]: _CollectionItem<K,V>,
 
 	Add: <K,V>(self: any, key: K, value: V) -> _CollectionItem<K,V>,
-	GetItems: <K,V>(self: any) -> { [K]: V },
-	ForEach: <K,V>(self: any, callback: (k: K, v: V, i: number?) -> nil) -> nil
+	GetItems: (self: any) -> { [K]: V },
+	ForEach: (self: any, callback: (k: K, v: V, i: number?) -> nil) -> nil
 }
 
 
@@ -171,8 +171,8 @@ export type _CollectionItemStatic = _BaseStaticNode & {
 	New : <K,V>(key: K, value: V) -> _CollectionItem<K,V>,
 }
 export type _CollectionItem<K,V> = _Node & { 
-	key: K,
-	value: V?
+	Key: K,
+	Value: V?
 }
 
 
