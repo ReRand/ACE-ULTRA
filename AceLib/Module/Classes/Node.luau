@@ -29,7 +29,7 @@ function Nodes.Node.New() : Nodes._Node
 end
 
 
-function Nodes.Node.Prototype:GetRemote() : _Node
+function Nodes.Node.Prototype:GetRemote() : Nodes._Node
 end
 
 

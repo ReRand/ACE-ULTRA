@@ -2,8 +2,8 @@
 --!nonstrict
 --!native
 
-local AceLib = require(game.ReplicatedStorage.AceLib)
-local Nodes = require(game.ReplicatedStorage.AceLib.Nodes)
+local AceLib = require(game.ReplicatedStorage.Modules.AceLib)
+local Nodes = require(game.ReplicatedStorage.Modules.AceLib.Nodes)
 
 local collection = Nodes.Collection.New({
 	{ 1, "foo" },
