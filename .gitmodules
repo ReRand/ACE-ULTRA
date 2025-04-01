@@ -1,3 +1,10 @@
+# git submodule add https://github.com/chaconinc/DbConnector
+# git mv A B to change the name of submodules
+
+
 [submodule "Assets"]
 	path = Assets
 	url = https://github.com/ReRand/ACE-ULTRA-Assets
+[submodule "RbxRevared"]
+	path = RbxRevared
+	url = https://github.com/ReRand/RbxRevared
